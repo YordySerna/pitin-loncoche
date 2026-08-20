@@ -1240,6 +1240,36 @@ ul { margin: 0; padding: 0; list-style: none; }
    esto el navegador estampa su ícono de imagen rota sobre el placeholder. */
 .sin-foto img { display: none; }
 
+/* Mientras la foto no está pegada, el hueco dice QUÉ foto va ahí, con el
+   mismo lenguaje punteado de los datos de ejemplo: así la demo se lee como
+   "esto se completa con sus fotos reales", no como imágenes caídas. El texto
+   sale de data-pendiente y solo aparece bajo .sin-foto: al pegar el archivo,
+   la chapa desaparece sola. */
+.galeria__foto::after,
+.panel__foto::after {
+  content: attr(data-pendiente);
+  position: absolute;
+  left: .9rem;
+  bottom: .9rem;
+  z-index: 1;
+  display: none;
+  padding: .45rem .8rem;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--hueso);
+  background: rgba(26,19,16,.55);
+  border: 1px dashed rgba(252,248,238,.45);
+  max-width: calc(100% - 1.8rem);
+}
+/* En el panel de la historia la máscara funde el borde izquierdo (y el de
+   abajo en móvil): la chapa va arriba a la derecha, donde nada la borra. */
+.panel__foto::after { left: auto; bottom: auto; right: .9rem; top: .9rem; }
+
+.galeria__foto.sin-foto::after,
+.panel__foto.sin-foto::after { display: inline-block; }
+
 /* --------------------------------------------------------------------------
    16. CÓMO LLEGAR
    -------------------------------------------------------------------------- */
