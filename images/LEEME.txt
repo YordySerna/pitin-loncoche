@@ -1,50 +1,45 @@
-QUÉ FOTO VA EN CADA ARCHIVO — Restaurant Pitín, Loncoche
-=========================================================
+FOTOS DEL SITIO — Restaurant Pitín, Loncoche
+=============================================
 
-Pegar las fotos en esta carpeta con EXACTAMENTE estos nombres (minúsculas,
-sin tildes). Mientras un archivo falte, la página muestra un degradado de la
-paleta en su lugar: nada se rompe.
+Actualizado 20-08-2026: las capturas que dejó Yordy ya están convertidas a
+JPEG calidad 82 y puestas en su lugar. Los PNG originales quedaron en
+images/originales/ (esa carpeta no se sube al repositorio).
 
-Los originales (capturas, HEIC, WebP) van en images/originales/ — esa
-carpeta no se sube al repositorio (.gitignore). Convertir a JPEG calidad ~82
-con el script de PowerShell de siempre.
+YA PUESTAS (archivo → qué se ve)
+--------------------------------
+hero-local.jpg         Salón del local con vigas de madera (foto principal
+                       del sitio, 1634 px de ancho). Si aparece una toma más
+                       ancha o una cazuela humeando en primer plano, mejor.
+local-fachada.jpg      El letrero tallado de la entrada + placa "Ignacio
+                       Serrano 144" (sección "La historia").
+plato-mechada.jpg      Carne mechada con puré (foto grande de la galería).
+ensalada-pan-aji.jpg   Ensalada surtida, pan amasado y ají casero — lo mismo
+                       que nombra la reseña de TripAdvisor.
+merluza-frita.jpg      Merluza frita con papas (plato real de la carta).
+salon-mesas.jpg        Salón del primer piso.
+evento-cumpleanos.jpg  El salón vestido para un cumpleaños (respalda la
+                       sección de celebraciones).
+og-portada.jpg         1200x630 exactos: recorte del letrero tallado con la
+                       placa de la dirección. Es lo que aparece al compartir
+                       el enlace por WhatsApp/Facebook.
 
-ARCHIVO               QUÉ FOTO VA
---------------------  -----------------------------------------------------
-hero-local.jpg        La foto principal del sitio. El salón con las mesas
-                      puestas, o una cazuela humeando en primer plano con el
-                      comedor desenfocado atrás. HORIZONTAL, mínimo 2000 px
-                      de ancho. OJO: al pegarla, revisar que el titular
-                      blanco se lea bien encima (el velo oscuro está
-                      calibrado, pero una foto muy clara puede pedir un
-                      ajuste fino).
+FOTOS QUE TODAVÍA FALTAN (pedírselas al local)
+----------------------------------------------
+1. LA CAZUELA humeando — es el plato estrella y no hay ni una foto. Cuando
+   llegue: guardarla como plato-cazuela.jpg, ponerla de foto principal de la
+   galería (la mechada baja a un hueco chico) y considerarla para el hero.
+2. Las mesas del BALCÓN del segundo piso (rasgo único del local).
+3. La COCINA o el equipo trabajando — la señora Verónica y su gente. Es la
+   foto que más humaniza y más vende.
 
-local-fachada.jpg     Fachada del local en Ignacio Serrano 144 (sección
-                      "La historia"). Vertical u horizontal, mínimo 1400 px
-                      de alto.
+Para reemplazar cualquier foto: pegar el archivo nuevo con el MISMO nombre.
+Si un archivo falta o se corrompe, la página muestra un degradado con una
+chapa que dice qué foto va ahí — nada se rompe.
 
-plato-cazuela.jpg     La mejor cazuela que tengan, humeando. Es la foto
-                      grande de la galería (1200x900 aprox).
-
-salon-mesas.jpg       El salón del primer piso con las mesas puestas.
-
-plato-fondo.jpg       Un plato de fondo: asado a la olla o carne mechada.
-
-balcon-mesas.jpg      Las mesas del balcón del segundo piso (es un rasgo
-                      único del local: aparece hasta en su TripAdvisor).
-
-equipo-cocina.jpg     La cocina trabajando, o la señora Verónica y el
-                      equipo. Humaniza el sitio: es la foto que más vende.
-
-og-portada.jpg        1200x630 EXACTOS. Es la imagen que aparece al
-                      compartir el enlace por WhatsApp/Facebook. Hoy hay una
-                      generada con la paleta del sitio; idealmente
-                      reemplazarla por una foto real de la cazuela con el
-                      nombre encima.
-
-favicon-96.png        Generados con PowerShell (.NET). Solo regenerar si
-favicon-512.png       cambia la marca. El favicon.ico de la raíz sale del
-apple-touch-icon.png  mismo script.
+Capturas sin usar (quedaron en originales/): asado con puré duplicado
+(221919), salón con clientes (221927), cumpleaños infantil (221933),
+empanadas sobreexpuestas (221944), postre (222003), carne a la olla
+sobreexpuesta (222008). Sirven de repuesto si el cliente lo pide.
 
 DATOS QUE FALTAN (además de las fotos)
 --------------------------------------
@@ -56,3 +51,5 @@ comentario y con borde/subrayado punteado en pantalla.
 - Confirmar el número de WhatsApp: Facebook y Google dicen +56 9 8911 6716,
   pero la municipalidad publica +56 9 8611 6716.
 - Medios de pago, delivery vigente, y si reciben almuerzos de empresa.
+  (En la foto de la puerta se ven calcomanías de Visa/Mastercard — buena
+  señal para la pregunta de las tarjetas, pero igual confirmarlo.)
