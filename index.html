@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restaurant Pitín · Comida casera en Loncoche</title>
+<meta name="description" content="La picada premiada de Loncoche: cazuelas, asado a la olla y comida casera servida por la misma familia desde 1998. Elegida la mejor picada de La Araucanía. Ignacio Serrano 144.">
+<meta name="theme-color" content="#1a1310">
+<meta name="author" content="Restaurant Pitín">
+<link rel="canonical" href="https://yordyserna.github.io/pitin-loncoche/">
+
+<!-- Open Graph / redes. La imagen DEBE ser URL absoluta o WhatsApp y
+     Facebook no la muestran. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Restaurant Pitín">
+<meta property="og:title" content="Restaurant Pitín · Loncoche">
+<meta property="og:description" content="La picada premiada de Loncoche: cazuelas, asado a la olla y comida casera de la familia Rivas desde 1998.">
+<meta property="og:url" content="https://yordyserna.github.io/pitin-loncoche/">
+<meta property="og:image" content="https://yordyserna.github.io/pitin-loncoche/images/og-portada.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicon como ARCHIVOS reales. Nada de data: URI: Google no lo indexa y
+     termina mostrando el globo gris en los resultados. -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<!-- Tipografías: Fraunces (titulares) + Work Sans (cuerpo).
+     Fraunces tiene las serifas blandas de una carta de restaurante antiguo y
+     numerales a la antigua para que los precios se vean caros; Work Sans es
+     una grotesca cálida que no huele a plantilla. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400&family=Work+Sans:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/estilos.css?v=20260819a">
+
+<script>
+  /* Marca que el JS está vivo. Los estados ocultos previos a animar cuelgan
+     todos de .js, así que si este script no corre la página se ve completa.
+     Además queda un temporizador de rescate: si principal.js no alcanza a
+     arrancar en 2,5 s (404, error de sintaxis, red caída), se quita .js sola
+     y el contenido aparece igual. */
+  document.documentElement.className += ' js';
+  window.RESCATE_JS = setTimeout(function () {
+    document.documentElement.className =
+      document.documentElement.className.replace(/\bjs\b/, '');
+  }, 2500);
+</script>
+</head>
+
+<body>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<!-- Fondo ambiental. Todo en CSS puro, sin una sola librería:
+     · manchas de color de cocina que derivan muy lento,
+     · vahos de vapor que cruzan la pantalla de lado a lado,
+     · especias tostadas que suben flotando.
+     Decorativo: aria-hidden para que ningún lector de pantalla lo anuncie. -->
+<div class="humo" aria-hidden="true">
+  <span class="humo__mancha humo__mancha--1"></span>
+  <span class="humo__mancha humo__mancha--2"></span>
+  <span class="humo__mancha humo__mancha--3"></span>
+  <span class="humo__mancha humo__mancha--4"></span>
+
+  <span class="humo__vaho humo__vaho--1"></span>
+  <span class="humo__vaho humo__vaho--2"></span>
+  <span class="humo__vaho humo__vaho--3"></span>
+</div>
+
+<div class="especias" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- ====================================================================
+     CABECERA
+     ==================================================================== -->
+<header class="cabecera" id="cabecera">
+  <div class="cabecera__interior">
+
+    <a class="marca" href="#inicio">
+      <span class="marca__icono" aria-hidden="true">
+        <!-- Una olla con su vapor: el oficio de la casa en cuatro trazos. -->
+        <svg viewBox="0 0 40 40" width="34" height="34" focusable="false">
+          <path d="M8 20 h24 v4 a12 8 0 0 1 -12 8 a12 8 0 0 1 -12 -8 Z" fill="currentColor"/>
+          <rect x="4" y="19" width="32" height="3" rx="1.5" fill="currentColor" opacity=".7"/>
+          <path d="M15 14 c-2 -3 2 -4 0 -7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/>
+          <path d="M21 15 c-2 -3 2 -5 0 -8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" opacity=".55"/>
+          <path d="M27 14 c-2 -3 2 -4 0 -7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/>
+        </svg>
+      </span>
+      <span class="marca__texto">
+        <strong>Pitín</strong>
+        <em>Comida casera · Loncoche</em>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+      <ul class="nav__lista">
+        <li><a href="#carta">La carta</a></li>
+        <li><a href="#historia">La historia</a></li>
+        <li><a href="#resenas">Reseñas</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#llegar">Cómo llegar</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+      </ul>
+    </nav>
+
+    <a class="boton boton--wa cabecera__cta" href="#contacto" data-wa
+       data-wa-texto="Hola Restaurant Pitín 👋 Vi el sitio y quiero reservar una mesa.">
+      <svg class="ico-wa" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.7-3.4c-1.2-1.5-1.6-2.6-1.7-3.1-.1-.5.1-1.2.5-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.7 1.7c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.2.1.4.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l1.6.8c.3.1.5.2.6.4.1.1.1.5-.1 1.1Z"/>
+      </svg>
+      Reservar
+    </a>
+
+    <button class="hamburguesa" id="hamburguesa" type="button"
+            aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ====================================================================
+     HERO
+     ==================================================================== -->
+<section class="hero" id="inicio">
+
+  <div class="hero__fondo" aria-hidden="true">
+    <!-- FOTO: el salón del local con las mesas puestas, o una cazuela
+         humeando en primer plano con el comedor desenfocado atrás.
+         Horizontal, mientras más ancha mejor (2000px+). -->
+    <img src="images/hero-local.jpg" alt="" width="2000" height="1125"
+         fetchpriority="high" decoding="async">
+  </div>
+
+  <div class="hero__interior">
+
+    <!-- Cartel ABIERTO/CERRADO: lo calcula el JS con la hora real de Chile
+         (America/Santiago). Sin JS queda este texto fijo. Lleva borde
+         punteado de EJEMPLO porque los días exactos aún no están
+         confirmados por el local: el rango 11:00–16:30 es el publicado en
+         su ficha de TripAdvisor. -->
+    <p class="estado es-ejemplo" id="estado-local">
+      <span class="estado__punto" aria-hidden="true"></span>
+      <span id="estado-texto">Lun a sáb · 11:00 a 16:30</span>
+    </p>
+
+    <p class="kicker kicker--claro">Loncoche · La Araucanía · Desde 1998</p>
+
+    <h1 class="hero__titulo">
+      <span class="degradado-cazuela">La picada premiada<br>de La Araucanía</span>
+    </h1>
+
+    <p class="hero__bajada">
+      Cazuela recién servida, siete u ocho platos caseros que cambian cada
+      día, y la atención de la familia de siempre. En Ignacio Serrano 144,
+      en pleno centro de Loncoche.
+    </p>
+
+    <div class="hero__acciones">
+      <a class="boton boton--wa boton--grande" href="#reservar">
+        <svg class="ico-wa" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.7-3.4c-1.2-1.5-1.6-2.6-1.7-3.1-.1-.5.1-1.2.5-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.7 1.7c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.2.1.4.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l1.6.8c.3.1.5.2.6.4.1.1.1.5-.1 1.1Z"/>
+        </svg>
+        Reservar una mesa
+      </a>
+      <a class="boton boton--fantasma boton--grande" href="#carta">Ver la carta</a>
+    </div>
+  </div>
+
+  <!-- Cifras: las cuatro están verificadas en fuentes públicas.
+       1998 y el premio: prensa y Sernatur. 4,6: su ficha de Google.
+       98%: su página de Facebook (30 opiniones). -->
+  <ul class="cifras" aria-label="Datos rápidos">
+    <li class="cifras__item"><b>1998</b><span>cocinando en Loncoche</span></li>
+    <li class="cifras__item"><b>4,6★</b><span>puntuación en Google</span></li>
+    <li class="cifras__item"><b>98%</b><span>lo recomienda en Facebook</span></li>
+    <li class="cifras__item"><b>1.ª</b><span>picada de La Araucanía · 2014</span></li>
+  </ul>
+
+  <a class="hero__flecha" href="#carta" aria-label="Bajar a la carta">
+    <span aria-hidden="true"></span>
+  </a>
+</section>
+
+
+<!-- ====================================================================
+     LA CARTA
+     Los platos nombrados acá aparecen en reseñas del local y en prensa
+     (cazuelas, asado a la olla, carne mechada, merluza frita, tortillas de
+     choclo, legumbres, truchas). TODOS los precios son de demostración y
+     van marcados como EJEMPLO hasta tener la carta real.
+     ==================================================================== -->
+<section class="seccion" id="carta">
+  <div class="contenedor">
+
+    <header class="seccion__cabecera reveal">
+      <p class="kicker">Para servirse</p>
+      <h2 class="titulo-seccion">La carta de la casa</h2>
+      <p class="entradilla">
+        Comida casera, de olla grande: todo preparado, llegar y servirse.
+        Estos son los platos por los que la gente vuelve, según sus propias
+        reseñas.
+      </p>
+    </header>
+
+    <div class="carta reveal">
+
+      <!-- Menú del día: el formato clásico de la casa según las reseñas
+           (plato + ensalada + pan + ají casero). -->
+      <div class="menu-dia">
+        <div class="menu-dia__encabezado">
+          <h3>El menú del día</h3>
+          <!-- EJEMPLO — reemplazar: una reseña de 2022 hablaba de $4.000;
+               confirmar el valor vigente con el local. -->
+          <span class="menu-dia__precio es-ejemplo">$5.500</span>
+        </div>
+        <p>
+          Cazuela o plato de fondo del día, con ensalada surtida, pan y el
+          ají casero de la mesa. Hay siete u ocho preparaciones distintas
+          cada jornada: se elige mirando la olla, como debe ser.
+        </p>
+      </div>
+
+      <section class="carta__seccion">
+        <h3>Cazuelas</h3>
+        <p class="carta__nota-seccion">El plato que hizo famosa esta casa.</p>
+        <ul class="platos">
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Cazuela de vacuno</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <!-- EJEMPLO — reemplazar precio -->
+              <span class="plato__precio es-ejemplo">$6.500</span>
+            </div>
+            <p class="plato__detalle">Caldo de olla, abundante, con la papa
+               entera, el choclo y la carne que se deshace.</p>
+          </li>
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Cazuela de ave</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <!-- EJEMPLO — reemplazar precio -->
+              <span class="plato__precio es-ejemplo">$6.000</span>
+            </div>
+            <p class="plato__detalle">La versión de campo, con presa grande y
+               caldo dorado.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="carta__seccion">
+        <h3>De la tradición</h3>
+        <p class="carta__nota-seccion">Lo que casi nadie sigue haciendo a mano.</p>
+        <ul class="platos">
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Tortilla de choclo</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <!-- EJEMPLO — reemplazar precio -->
+              <span class="plato__precio es-ejemplo">$4.500</span>
+            </div>
+            <p class="plato__detalle">Dorada por fuera, dulce por dentro.</p>
+          </li>
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Legumbres de la casa</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <!-- EJEMPLO — reemplazar precio -->
+              <span class="plato__precio es-ejemplo">$5.500</span>
+            </div>
+            <p class="plato__detalle">Porotos, lentejas o garbanzos según el
+               día, guisados despacio.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="carta__seccion">
+        <h3>Platos de fondo</h3>
+        <ul class="platos">
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Asado a la olla</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <!-- EJEMPLO — reemplazar precio -->
+              <span class="plato__precio es-ejemplo">$7.500</span>
+            </div>
+          </li>
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Carne mechada</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <!-- EJEMPLO — reemplazar precio -->
+              <span class="plato__precio es-ejemplo">$7.000</span>
+            </div>
+          </li>
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Chuletas de cerdo</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <!-- EJEMPLO — reemplazar precio -->
+              <span class="plato__precio es-ejemplo">$7.000</span>
+            </div>
+          </li>
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Pollo al horno</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <!-- EJEMPLO — reemplazar precio -->
+              <span class="plato__precio es-ejemplo">$6.500</span>
+            </div>
+          </li>
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Churrasco</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <!-- EJEMPLO — reemplazar precio -->
+              <span class="plato__precio es-ejemplo">$6.000</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="carta__seccion">
+        <h3>Del río y del mar</h3>
+        <ul class="platos">
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Merluza frita</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <!-- EJEMPLO — reemplazar precio -->
+              <span class="plato__precio es-ejemplo">$6.500</span>
+            </div>
+            <p class="plato__detalle">Con agregado a elección.</p>
+          </li>
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Trucha de la zona</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <!-- EJEMPLO — reemplazar precio -->
+              <span class="plato__precio es-ejemplo">$8.000</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="carta__seccion">
+        <h3>Postres y para tomar</h3>
+        <!-- EJEMPLO — reemplazar: esta sección completa es de demostración;
+             no hay carta de postres ni de bebidas publicada. -->
+        <p class="carta__nota-seccion es-ejemplo">Sección de ejemplo — se
+           completa con la carta real del local.</p>
+        <ul class="platos">
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Leche asada</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <span class="plato__precio es-ejemplo">$2.500</span>
+            </div>
+          </li>
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Mote con huesillo</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <span class="plato__precio es-ejemplo">$2.500</span>
+            </div>
+          </li>
+          <li class="plato">
+            <div class="plato__linea">
+              <h4 class="plato__nombre">Bebidas y jugos naturales</h4>
+              <span class="plato__puntos" aria-hidden="true"></span>
+              <span class="plato__precio es-ejemplo">$1.800</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+    </div><!-- /.carta -->
+
+    <p class="nota-carta reveal">
+      Los platos de esta carta aparecen nombrados en las reseñas y la prensa
+      del local. <span class="es-ejemplo">Los valores marcados con línea
+      punteada son referenciales de demostración: se reemplazan con la carta
+      vigente del restaurante.</span>
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     LA HISTORIA — sección oscura, foto a sangre a la derecha
+     Todo lo que se cuenta acá está publicado: Sernatur, prensa regional y
+     una entrevista a la dueña (CMPC, 2020).
+     ==================================================================== -->
+<section class="seccion seccion--oscura panel" id="historia">
+
+  <div class="panel__foto" aria-hidden="true">
+    <!-- FOTO: la fachada del local en Ignacio Serrano 144, o la cocina
+         trabajando. Vertical u horizontal, mínimo 1400px de alto. -->
+    <img src="images/local-fachada.jpg" alt="" width="1400" height="1800"
+         loading="lazy" decoding="async">
+  </div>
+
+  <div class="panel__texto">
+    <header class="seccion__cabecera reveal">
+      <p class="kicker kicker--claro">Quiénes somos</p>
+      <h2 class="titulo-seccion titulo-seccion--claro">La casa que levantó<br>el Pitín</h2>
+      <p class="entradilla entradilla--clara">
+        Sergio Antonio Rivas —el "Pitín"— empezó cocinando en una casa
+        arrendada. Cuando heredó de sus abuelos una casona de más de treinta
+        años en Loncoche, levantó en ella su propio restaurante. Era 1998.
+      </p>
+    </header>
+
+    <div class="reveal">
+      <p class="historia__parrafo">
+        La apuesta era simple y sigue siendo la misma: olla grande, comida
+        casera y precio justo. En 2014, la gente respondió: con 589 votos,
+        Donde Pitín fue elegida la mejor picada de La Araucanía en el
+        concurso de Sernatur, por sobre otras dieciséis cocinerías de la
+        región.
+      </p>
+      <p class="historia__parrafo">
+        Sergio falleció en 2015, y desde entonces la casa la lleva su señora,
+        Verónica Mella, con la familia. Ni la pandemia la detuvo: cuando no
+        se pudo atender en el salón, aprendieron delivery sobre la marcha y
+        siguieron cocinando. Hoy el local tiene dos pisos, mesas en el balcón
+        y la misma cazuela que hizo famoso al Pitín.
+      </p>
+
+      <ul class="hitos">
+        <li>
+          <span class="hitos__dato">1998</span>
+          <div>
+            <h3>Abre Donde Pitín</h3>
+            <p>En la casona heredada de los abuelos, en Ignacio Serrano 144.</p>
+          </div>
+        </li>
+        <li>
+          <span class="hitos__dato">2014</span>
+          <div>
+            <h3>La mejor picada de La Araucanía</h3>
+            <p>Elegida por votación popular en el concurso de Sernatur,
+               con 589 votos.</p>
+          </div>
+        </li>
+        <li>
+          <span class="hitos__dato">Hoy</span>
+          <div>
+            <h3>La misma familia</h3>
+            <p>Verónica Mella y los suyos mantienen la cocina que fundó
+               el Pitín.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     EVENTOS — banda clara
+     Verificado: el local hace bautizos, matrimonios y licenciaturas
+     (entrevista a la dueña, CMPC 2020).
+     ==================================================================== -->
+<section class="seccion" id="eventos">
+  <div class="contenedor contenedor--angosto">
+
+    <header class="seccion__cabecera seccion__cabecera--centrada reveal">
+      <p class="kicker">Celebraciones</p>
+      <h2 class="titulo-seccion">La casa también se arrienda entera</h2>
+      <p class="entradilla">
+        Desde siempre, las familias de Loncoche celebran sus fechas grandes
+        en el Pitín.
+      </p>
+    </header>
+
+    <ul class="eventos__lista reveal">
+      <li class="evento">
+        <span class="evento__ico" aria-hidden="true">❦</span>
+        <h3>Bautizos</h3>
+        <p>El almuerzo largo después de la iglesia.</p>
+      </li>
+      <li class="evento">
+        <span class="evento__ico" aria-hidden="true">✦</span>
+        <h3>Matrimonios</h3>
+        <p>Banquete casero para toda la familia.</p>
+      </li>
+      <li class="evento">
+        <span class="evento__ico" aria-hidden="true">❈</span>
+        <h3>Licenciaturas</h3>
+        <p>La celebración que se merece el cartón.</p>
+      </li>
+      <li class="evento es-ejemplo">
+        <span class="evento__ico" aria-hidden="true">◈</span>
+        <!-- EJEMPLO — reemplazar: confirmar si reciben almuerzos de empresa,
+             aniversarios u otros formatos y con cuánta anticipación. -->
+        <h3>Almuerzos de empresa</h3>
+        <p>Por confirmar con el local.</p>
+      </li>
+    </ul>
+
+    <div class="seccion__cabecera--centrada reveal">
+      <a class="boton boton--fantasma" href="#contacto" data-wa
+         data-wa-texto="Hola Restaurant Pitín 👋 Quiero cotizar un evento (bautizo, matrimonio, licenciatura…).">
+        Cotizar un evento
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     RESEÑAS — sección oscura. Números y opiniones REALES, con enlace a la
+     fuente. Nada de testimonios inventados.
+     ==================================================================== -->
+<section class="seccion seccion--oscura" id="resenas">
+  <div class="contenedor">
+
+    <header class="seccion__cabecera reveal">
+      <p class="kicker kicker--claro">Lo que dice la gente</p>
+      <h2 class="titulo-seccion titulo-seccion--claro">No lo decimos nosotros</h2>
+    </header>
+
+    <ul class="notas reveal" aria-label="Puntuaciones públicas del local">
+      <li class="nota">
+        <b>4,6</b>
+        <span>de 5 en Google Maps</span>
+      </li>
+      <li class="nota">
+        <b>98%</b>
+        <span>recomendado en Facebook · 30 opiniones</span>
+      </li>
+      <li class="nota">
+        <b>5,0</b>
+        <span>en TripAdvisor · N.º 3 de Loncoche</span>
+      </li>
+    </ul>
+
+    <div class="premio reveal">
+      <span class="premio__laurel" aria-hidden="true">1.ª</span>
+      <div>
+        <h3>Mejor picada de La Araucanía · Sernatur 2014</h3>
+        <p>Elegida por votación popular con 589 votos, entre diecisiete
+           picadas de toda la región.</p>
+      </div>
+    </div>
+
+    <div class="resenas reveal">
+      <article class="resena">
+        <blockquote>«Precios económicos, comida muy rica y muy buena
+          atención.»</blockquote>
+        <footer>Francisco S. · TripAdvisor, 2024 ·
+          <a href="https://www.tripadvisor.cl/Restaurant_Review-g4498168-d23889957-Reviews-Restaurant_Pitin-Loncoche_Araucania_Region.html"
+             target="_blank" rel="noopener">ver reseña</a>
+        </footer>
+      </article>
+      <article class="resena">
+        <p>La llama la mejor picada de Loncoche: destaca la variedad de
+           platos caseros, la ensalada surtida, el pan y el ají de la casa,
+           y la atención.</p>
+        <footer>Natalia R. · TripAdvisor, 2022 ·
+          <a href="https://www.tripadvisor.cl/Restaurant_Review-g4498168-d23889957-Reviews-Restaurant_Pitin-Loncoche_Araucania_Region.html"
+             target="_blank" rel="noopener">ver reseña</a>
+        </footer>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     GALERÍA
+     ==================================================================== -->
+<section class="seccion" id="galeria">
+  <div class="contenedor">
+
+    <header class="seccion__cabecera reveal">
+      <p class="kicker">Para mirar</p>
+      <h2 class="titulo-seccion">El local y los platos</h2>
+    </header>
+
+    <div class="galeria reveal">
+      <figure class="galeria__foto galeria__foto--principal">
+        <!-- FOTO: la mejor cazuela que tengan, humeando, en primer plano. -->
+        <img src="images/plato-cazuela.jpg" alt="Cazuela recién servida en Restaurant Pitín"
+             width="1200" height="900" loading="lazy" decoding="async">
+      </figure>
+      <figure class="galeria__foto">
+        <!-- FOTO: el salón del primer piso con las mesas puestas. -->
+        <img src="images/salon-mesas.jpg" alt="Salón del primer piso con las mesas puestas"
+             width="800" height="600" loading="lazy" decoding="async">
+      </figure>
+      <figure class="galeria__foto">
+        <!-- FOTO: un plato de fondo (asado a la olla o carne mechada). -->
+        <img src="images/plato-fondo.jpg" alt="Plato de fondo de la casa"
+             width="800" height="600" loading="lazy" decoding="async">
+      </figure>
+      <figure class="galeria__foto">
+        <!-- FOTO: las mesas del balcón del segundo piso. -->
+        <img src="images/balcon-mesas.jpg" alt="Mesas en el balcón del segundo piso"
+             width="800" height="600" loading="lazy" decoding="async">
+      </figure>
+      <figure class="galeria__foto">
+        <!-- FOTO: la cocina o el equipo trabajando. Con 5 fotos la grilla
+             cierra exacta en escritorio (la principal ocupa 2x2): si se
+             agrega una sexta, queda una losa suelta abajo. -->
+        <img src="images/equipo-cocina.jpg" alt="El equipo del Pitín en la cocina"
+             width="800" height="600" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     RESERVA POR WHATSAPP — sin backend
+     ==================================================================== -->
+<section class="seccion seccion--oscura" id="reservar">
+  <div class="contenedor contenedor--angosto">
+
+    <header class="seccion__cabecera seccion__cabecera--centrada reveal">
+      <p class="kicker kicker--claro">Reserva directa</p>
+      <h2 class="titulo-seccion titulo-seccion--claro">Aparta tu mesa</h2>
+      <p class="entradilla entradilla--clara">
+        Completa los datos y se abre WhatsApp con el mensaje listo. No se
+        envía nada desde acá ni queda registrado: el mensaje lo mandas tú.
+      </p>
+    </header>
+
+    <form class="cotizador reveal" id="reserva" novalidate>
+
+      <div class="campo">
+        <label for="r-fecha">Día</label>
+        <input type="date" id="r-fecha" name="fecha" required>
+      </div>
+
+      <div class="campo">
+        <label for="r-hora">Hora <span class="opcional">(horario por confirmar)</span></label>
+        <select id="r-hora" name="hora" required>
+          <option value="">Elegir…</option>
+          <option value="11:00">11:00</option>
+          <option value="11:30">11:30</option>
+          <option value="12:00">12:00</option>
+          <option value="12:30">12:30</option>
+          <option value="13:00">13:00</option>
+          <option value="13:30">13:30</option>
+          <option value="14:00">14:00</option>
+          <option value="14:30">14:30</option>
+          <option value="15:00">15:00</option>
+          <option value="15:30">15:30</option>
+          <option value="16:00">16:00</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="r-personas">Personas</label>
+        <input type="number" id="r-personas" name="personas" min="1" max="60" value="2" required>
+      </div>
+
+      <div class="campo">
+        <label for="r-nombre">Tu nombre</label>
+        <input type="text" id="r-nombre" name="nombre" autocomplete="name" placeholder="Para que sepan con quién hablan">
+      </div>
+
+      <div class="campo campo--ancho">
+        <label for="r-mensaje">Algo que quieras agregar <span class="opcional">(opcional)</span></label>
+        <textarea id="r-mensaje" name="mensaje" rows="3" placeholder="Celebramos un cumpleaños, vamos con silla de ruedas, queremos mesa en el balcón…"></textarea>
+      </div>
+
+      <div class="campo campo--ancho cotizador__resumen" id="reserva-resumen" aria-live="polite">
+        <p class="cotizador__lineas">Elige el día y la hora para ver el resumen.</p>
+      </div>
+
+      <div class="campo campo--ancho cotizador__acciones">
+        <button class="boton boton--wa boton--grande" type="submit">
+          <svg class="ico-wa" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.7-3.4c-1.2-1.5-1.6-2.6-1.7-3.1-.1-.5.1-1.2.5-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.7 1.7c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.2.1.4.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l1.6.8c.3.1.5.2.6.4.1.1.1.5-.1 1.1Z"/>
+          </svg>
+          Abrir WhatsApp con mi reserva
+        </button>
+        <p class="cotizador__error" id="reserva-error" role="alert" hidden></p>
+      </div>
+
+    </form>
+
+    <p class="nota-reserva reveal">
+      La mesa queda confirmada recién cuando el local responde el mensaje.
+      También aceptan retiro en el negocio.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     CÓMO LLEGAR
+     ==================================================================== -->
+<section class="seccion" id="llegar">
+  <div class="contenedor">
+
+    <header class="seccion__cabecera reveal">
+      <p class="kicker">Cómo llegar</p>
+      <h2 class="titulo-seccion">Ignacio Serrano 144, Loncoche</h2>
+    </header>
+
+    <div class="llegar">
+
+      <div class="llegar__texto reveal">
+        <p>
+          El local queda en pleno centro de Loncoche, y el pueblo está pegado
+          a la Ruta 5 Sur, a mitad de camino entre Temuco y Valdivia: la
+          parada obligada si andas viajando por la carretera con hambre de
+          comida de verdad.
+        </p>
+
+        <dl class="datos-llegada">
+          <dt>Dirección</dt>
+          <dd>Ignacio Serrano 144, sector centro<br>
+              Loncoche, Región de La Araucanía</dd>
+
+          <dt>Referencias</dt>
+          <dd>Frente al colegio Santa Cruz, a una cuadra del supermercado
+              Unimarc y a una del terminal de buses.</dd>
+
+          <dt>En auto</dt>
+          <dd>Desde la Ruta 5 Sur, tomar el acceso a Loncoche y seguir
+              hasta el centro: son un par de minutos.</dd>
+
+          <dt>Coordenadas</dt>
+          <dd>-39.368352, -72.631111</dd>
+        </dl>
+
+        <a class="boton boton--fantasma" id="enlace-mapa"
+           href="https://www.google.com/maps/search/?api=1&query=-39.3683524,-72.6311114"
+           target="_blank" rel="noopener">Abrir en Google Maps</a>
+      </div>
+
+      <!-- El mapa se carga recién al hacer clic: así la página no llama a
+           Google en cada visita ni carga 500 KB que casi nadie mira. -->
+      <div class="mapa reveal">
+        <button class="mapa__aviso" id="mapa-boton" type="button">
+          <span class="mapa__ico" aria-hidden="true">📍</span>
+          <span class="mapa__texto">
+            <b>Ver el mapa</b>
+            <em>Se carga desde Google Maps al tocar aquí</em>
+          </span>
+        </button>
+        <iframe class="mapa__marco" id="mapa-marco" title="Ubicación del Restaurant Pitín en Loncoche"
+                data-fuente="https://www.google.com/maps?q=-39.3683524,-72.6311114&hl=es&z=16&output=embed"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" hidden></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     PREGUNTAS FRECUENTES
+     ==================================================================== -->
+<section class="seccion" id="preguntas">
+  <div class="contenedor contenedor--angosto">
+
+    <header class="seccion__cabecera seccion__cabecera--centrada reveal">
+      <p class="kicker">Antes de venir</p>
+      <h2 class="titulo-seccion">Preguntas frecuentes</h2>
+    </header>
+
+    <div class="faq reveal">
+
+      <details class="faq__item">
+        <summary>¿Cómo reservo una mesa?</summary>
+        <p>Por WhatsApp: usa el formulario de arriba o escribe directo al
+           número de la sección de contacto. La reserva queda confirmada
+           cuando el local responde el mensaje.</p>
+      </details>
+
+      <details class="faq__item es-ejemplo">
+        <!-- EJEMPLO — reemplazar: el rango 11:00–16:30 está publicado en su
+             ficha de TripAdvisor, pero los días exactos no. -->
+        <summary>¿Qué días y a qué hora abren?</summary>
+        <p>El horario publicado es de 11:00 a 16:30 —es una casa de
+           almuerzos—, pero los días exactos hay que confirmarlos con el
+           local por WhatsApp.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>¿Hacen eventos y celebraciones?</summary>
+        <p>Sí: bautizos, matrimonios y licenciaturas se han celebrado ahí
+           toda la vida. Conviene cotizar con anticipación por WhatsApp.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>¿Puedo pedir para llevar?</summary>
+        <p>Sí, el local acepta retiro en el negocio: encarga por WhatsApp y
+           pasa a buscar tu pedido.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary>¿Dónde quedan exactamente?</summary>
+        <p>En Ignacio Serrano 144, en el centro de Loncoche: frente al
+           colegio Santa Cruz, a una cuadra del Unimarc y a una del terminal
+           de buses.</p>
+      </details>
+
+      <details class="faq__item es-ejemplo">
+        <!-- EJEMPLO — reemplazar: confirmar medios de pago reales -->
+        <summary>¿Aceptan tarjetas?</summary>
+        <p>Por confirmar con el local: medios de pago aceptados (efectivo,
+           débito, crédito, transferencia).</p>
+      </details>
+
+      <details class="faq__item es-ejemplo">
+        <!-- EJEMPLO — reemplazar: en pandemia hicieron delivery (entrevista
+             CMPC 2020); confirmar si el servicio sigue activo -->
+        <summary>¿Tienen reparto a domicilio?</summary>
+        <p>Durante la pandemia hicieron delivery en Loncoche. Confirmar por
+           WhatsApp si el servicio sigue disponible.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================================================================
+     CONTACTO — es también el destino de rescate de los botones de WhatsApp
+     ==================================================================== -->
+<section class="seccion seccion--oscura" id="contacto">
+  <div class="contenedor contenedor--angosto">
+
+    <header class="seccion__cabecera seccion__cabecera--centrada reveal">
+      <p class="kicker kicker--claro">Hablemos</p>
+      <h2 class="titulo-seccion titulo-seccion--claro">Contacto</h2>
+      <p class="entradilla entradilla--clara">
+        Atiende la misma familia que cocina.
+      </p>
+    </header>
+
+    <ul class="contacto reveal">
+      <li class="contacto__item" data-dato="fila-whatsapp">
+        <span class="contacto__etiqueta">WhatsApp</span>
+        <a class="contacto__valor" id="enlace-telefono" href="#" data-dato="telefono">+56 9 8911 6716</a>
+      </li>
+
+      <li class="contacto__item" data-dato="fila-email" hidden>
+        <span class="contacto__etiqueta">Correo</span>
+        <a class="contacto__valor" id="enlace-email" href="#" data-dato="email"></a>
+      </li>
+
+      <li class="contacto__item">
+        <span class="contacto__etiqueta">Dirección</span>
+        <span class="contacto__valor">Ignacio Serrano 144, Loncoche</span>
+      </li>
+
+      <li class="contacto__item">
+        <span class="contacto__etiqueta">Horario</span>
+        <!-- EJEMPLO — reemplazar: días por confirmar; el rango es el
+             publicado en TripAdvisor. -->
+        <span class="contacto__valor es-ejemplo">Lun a sáb · 11:00 a 16:30</span>
+      </li>
+
+      <li class="contacto__item">
+        <span class="contacto__etiqueta">Redes</span>
+        <span class="contacto__valor contacto__redes">
+          <a href="https://www.facebook.com/people/Restaurant-Pit%C3%ADn-Loncoche/100063827689309/"
+             target="_blank" rel="noopener" data-dato="facebook">Facebook</a>
+        </span>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ====================================================================
+     PIE
+     ==================================================================== -->
+<footer class="pie">
+  <div class="contenedor pie__interior">
+    <p class="pie__marca">Restaurant Pitín · Ignacio Serrano 144, Loncoche</p>
+    <p class="pie__legal">
+      <span id="anio">2026</span> · Todos los derechos reservados
+    </p>
+  </div>
+</footer>
+
+<!-- Acceso permanente a WhatsApp. En el celular es una barra al pie, que es
+     donde de verdad se toca; en pantalla grande, una placa en la esquina. -->
+<a class="wa-fijo" href="#contacto" data-wa
+   data-wa-texto="Hola Restaurant Pitín 👋 Quiero reservar una mesa.">
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.7-3.4c-1.2-1.5-1.6-2.6-1.7-3.1-.1-.5.1-1.2.5-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.7 1.7c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.8 1.2 2.1 1.3.2.1.4.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l1.6.8c.3.1.5.2.6.4.1.1.1.5-.1 1.1Z"/>
+  </svg>
+  <span>Reservar por WhatsApp</span>
+</a>
+
+
+<!-- ====================================================================
+     DATOS ESTRUCTURADOS
+     Solo se declara lo verificado en fuentes públicas (su Facebook, su
+     ficha de Google, Sernatur, prensa). Sin horarios: aún no están
+     confirmados por el local. Un dato falso acá es peor que ninguno.
+     ==================================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Restaurant Pitín",
+  "alternateName": "Donde Pitín",
+  "url": "https://yordyserna.github.io/pitin-loncoche/",
+  "image": "https://yordyserna.github.io/pitin-loncoche/images/og-portada.jpg",
+  "description": "Restaurante de comida casera en Loncoche, fundado en 1998. Elegido la mejor picada de La Araucanía en 2014 por Sernatur. Cazuelas, asado a la olla y menú del día, en un local de dos pisos con mesas en balcón.",
+  "telephone": "+56989116716",
+  "servesCuisine": "Chilena",
+  "priceRange": "$$",
+  "foundingDate": "1998",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ignacio Serrano 144",
+    "addressLocality": "Loncoche",
+    "addressRegion": "La Araucanía",
+    "postalCode": "4970909",
+    "addressCountry": "CL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -39.3683524,
+    "longitude": -72.6311114
+  },
+  "award": "Mejor picada de La Araucanía 2014, Sernatur",
+  "sameAs": [
+    "https://www.facebook.com/people/Restaurant-Pit%C3%ADn-Loncoche/100063827689309/"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo se reserva una mesa en Restaurant Pitín?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Por WhatsApp, al +56 9 8911 6716. La reserva queda confirmada cuando el local responde el mensaje." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Restaurant Pitín hace eventos y celebraciones?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí: bautizos, matrimonios y licenciaturas se celebran en el local. Conviene cotizar con anticipación por WhatsApp." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede pedir para llevar en Restaurant Pitín?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, el local acepta retiro en el negocio: se encarga por WhatsApp y se pasa a buscar el pedido." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde queda Restaurant Pitín?",
+      "acceptedAnswer": { "@type": "Answer", "text": "En Ignacio Serrano 144, en el centro de Loncoche, Región de La Araucanía: frente al colegio Santa Cruz, a una cuadra del supermercado Unimarc y a una del terminal de buses." }
+    }
+  ]
+}
+</script>
+
+<script src="js/datos.js?v=20260819a"></script>
+<script src="js/principal.js?v=20260819a"></script>
+</body>
+</html>
